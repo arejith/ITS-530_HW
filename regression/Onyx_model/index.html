@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Regression Model - Multiple Architectures</title>
+  <!-- Load ORT first, then your code; use defer so DOM is ready -->
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js" defer></script>
+  <script src="index.js" defer></script>
+  <style>
+
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .container { display: flex; gap: 40px; align-items: flex-start; }
+    #leftbox { flex: 0 0 300px; }
+    #rightbox { flex: 0 0 420px; border-left: 1px solid #ccc; padding-left: 20px; }
+    input[type="text"] { width: 100px; margin-bottom: 6px; }
+    table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+    td, th { border: 1px solid #999; padding: 6px 10px; text-align: center; }
+    th { background-color: #f0f0f0; }
+    button { margin-top: 10px; background: #ffd400; padding: 8px 16px; cursor: pointer; border: 1px solid #c9a800; }
+    #status { margin-top: 8px; font-size: 0.95rem; color: #444; }
+  </style>
+</head>
+<body>
+  <h1>Regression - Multiple Architectures</h1>
+
+  <div class="container">
+    <!-- Left: Inputs -->
+    <div id="leftbox">
+      <h2>Input Features</h2>
+      <div>
+        <input type="text" id="box0c1"  value="1800"> Age<br/>
+        <input type="text" id="box1c1"  value="1700"> physical Activity minutes/week<br/>
+        <input type="text" id="box2c1"  value="70">   Diet_score<br/>
+        <input type="text" id="box3c1"  value="2000"> family_history_diabetes<br/>
+        <input type="text" id="box4c1"  value="1800"> Cardiovascular_history<br/>
+        <input type="text" id="box5c1"  value="1800"> BMI<br/>
+        <input type="text" id="box6c1"  value="1800"> Waist to hip ratio<br/>
+        <input type="text" id="box7c1"  value="1800"> Systolic_bp<br/>
+        <input type="text" id="box8c1"  value="1800"> hdl_cholestrol<br/>
+        <input type="text" id="box9c1"  value="1800"> ldl_cholestrol<br/>
+        <input type="text" id="box10c1" value="1800"> Triglicerides<br/>
+        <input type="text" id="box11c1" value="1800"> Glucose_fasting<br/>
+        <input type="text" id="box12c1" value="1800"> Glucose_postprandinal<br/>
+        <input type="text" id="box13c1" value="1800"> Insulin_level<br/>
+      </div>
+
+      <button id="evalBtn" disabled>Evaluate</button>
+      <div id="status">Loading model…</div>
+    </div>
+
+    <!-- Right: Output -->
+    <div id="rightbox">
+      <h2>Model Predictions (Random seed=63)</h2>
+      <div id="predictions1">O/p</div>
+    </div>
+  </div>
+</body>
+</html>
